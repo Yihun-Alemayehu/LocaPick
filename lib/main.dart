@@ -16,15 +16,15 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  // late MapController controller;
+  late MapController controller;
 
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   controller = MapController(
-  //     initMapWithUserPosition: const UserTrackingOption(),
-  //   );
-  // }
+  @override
+  void initState() {
+    super.initState();
+    controller = MapController(
+      initMapWithUserPosition: const UserTrackingOption(),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,22 +34,22 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
       ),
       body: Container(
-          // child: OSMFlutter(
-          //   controller: controller,
-          //   osmOption: OSMOption(
-          //     isPicker: true,
-          //     // userLocationMarker: UserLocationMaker(personMarker: personMarker, directionArrowMarker: directionArrowMarker),
-          //     markerOption: MarkerOption(
-          //       advancedPickerMarker: const MarkerIcon(
-          //         icon: Icon(
-          //           Icons.pin_drop,
-          //           color: Colors.black,
-          //           size: 300,
-          //         ),
-          //       ),
-          //     ),
-          //   ),
-          // ),
+          child: OSMFlutter(
+            controller: controller,
+            osmOption: OSMOption(
+              isPicker: true,
+              // userLocationMarker: UserLocationMaker(personMarker: personMarker, directionArrowMarker: directionArrowMarker),
+              markerOption: MarkerOption(
+                advancedPickerMarker: const MarkerIcon(
+                  icon: Icon(
+                    Icons.pin_drop,
+                    color: Colors.black,
+                    size: 300,
+                  ),
+                ),
+              ),
+            ),
+          ),
           ),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
